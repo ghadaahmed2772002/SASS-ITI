@@ -1,0 +1,136 @@
+@import './variables.scss';
+@import './layouts/margin.scss';
+@import './component/container.scss';
+@import './layouts/grid.scss';
+
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.4) rotate(4deg);
+    -webkit-transform: scale(1.4) rotate(4deg);
+    -moz-transform: scale(1.4) rotate(4deg);
+    -ms-transform: scale(1.4) rotate(4deg);
+    -o-transform: scale(1.4) rotate(4deg);
+}
+  100% {
+    transform: scale(1) rotate(0deg);
+    -webkit-transform: scale(1) rotate(0deg);
+    -moz-transform: scale(1) rotate(0deg);
+    -ms-transform: scale(1) rotate(0deg);
+    -o-transform: scale(1) rotate(0deg);
+}
+}
+
+
+body {
+    background: linear-gradient(to right, $color1, $color2,$color3);
+    .center {
+      min-height: 100vh;
+    }
+    .rectangle1, 
+    .rectangle2 {
+      filter: blur(15px);
+      animation: animate 2s infinite ease-in-out;
+      -webkit-animation: animate 2s infinite ease-in-out;
+      -webkit-filter: blur(15px);
+}
+    .rectangle{
+      width: 300px;
+      height: 300px;
+      border-radius: 20px;
+      position: absolute;
+      z-index: -1;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+      -o-border-radius: 20px;
+}
+    .rectangle1 {
+      top:90px;
+      left: 150px;
+      background-color: $color3;
+      filter: blur(15px);
+      transition: transform 0.5s ease-in-out;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+    .rectangle2 {
+      bottom:90px;
+      right: 150px;
+      background-color: $color2;
+      filter: blur(15px);
+      transition: transform 0.5s ease-in-out;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .rectangle1,
+      .rectangle2 {
+        display: none;
+      }
+    }
+  }
+  
+
+.box {
+    width: 70%;
+    margin: auto;
+    background-color: $primary-color;
+    border-radius: 5px;
+    box-shadow: 0 0 10px $color3; 
+    // height:90vh;
+    h1 {
+      text-align: center;
+      font-size:2rem;
+      color: $color1;
+    }
+  }
+  label{
+    font-size:1rem;
+  }
+.row {
+    .input-group {
+      input {
+        width: 100%;
+        border: 2px solid #ccc; 
+        outline: none;
+        border-radius: 5px;;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        &:focus {
+          border-color:$color1; 
+          box-shadow: 0 0 5px $color1; 
+        }
+     }
+    }
+    .btn {
+      background: linear-gradient(to right, $color1, $color2,$color3);
+      transition: background 1.5s;
+      color: $primary-color;
+      border-radius: 5px;
+      font-size:1rem;
+      border: none;
+      &:hover 
+      {
+        background: linear-gradient(to right, $color3,$color4);
+      }
+    }
+}
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+  }

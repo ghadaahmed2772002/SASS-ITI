@@ -1,0 +1,5 @@
+@import './column.scss';
+@include layout();
+@include layout(12, sm, 576px);
+@include layout(12, md, 768px);
+@include layout(12, lg, 992px);

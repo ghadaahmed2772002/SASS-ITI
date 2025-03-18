@@ -1,0 +1,17 @@
+@mixin layout($col: 12, $size: '', $breakpoint: 0px) {
+    @if ($size == '') {
+        @for $i from 1 through $col {
+            .col-#{$i} {
+                width:( $i/ $col * 100%);
+            }
+        }
+    } @else {
+        @media (min-width: $breakpoint) {
+            @for $i from 1 through $col {
+                .col-#{$size}-#{$i} {
+                    width:( $i/ $col * 100%);
+                }
+            }
+        }
+    }
+}
